@@ -14,6 +14,14 @@ app.use(cors(), bodyParser.json(), expressJwt({
   credentialsRequired: false
 }));
 
+const typeDefs = gql`
+//TODO: Add typeDefs
+`;
+
+const resolvers = {
+  // TODO: Add resolvers
+}
+
 app.post('/login', (req, res) => {
   const {email, password} = req.body;
   const user = db.users.list().find((user) => user.email === email);

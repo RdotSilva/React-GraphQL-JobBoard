@@ -20,15 +20,10 @@ app.use(
   })
 );
 
+// GraphQL
 const typeDefs = gql(fs.readFileSync("./schema.graphql"), { encoding: "utf8" });
-
-const resolvers = {
-  // TODO: Add resolvers
-};
-
-// Create Apollo Server
+const resolvers = require("/resolvers");
 const apolloServer = new ApolloServer({ typeDefs, resolvers });
-
 // Pass in Express App as middleware and set the default GraphQL path
 apolloServer.applyMiddleware({ app, path: "/graphql" });
 

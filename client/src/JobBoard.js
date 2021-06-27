@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import { JobList } from "./JobList";
 import { loadJobs } from "./requests";
 
-export const JobBoard = () => {
-  const [jobs, setJobs] = useState([]);
+export class JobBoard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { jobs: [] };
+  }
 
-  useEffect(async () => {
-    const newJobs = await loadJobs();
+  async componentDidMount() {
+    const jobs = await loadJobs();
+    this.setState({ jobs });
+  }
 
-    setJobs(newJobs.data);
-  }, []);
-
-  return (
-    <div>
-      <h1 className="title">Job Board</h1>
-      <JobList jobs={jobs} />
-    </div>
-  );
-};
+  render() {
+    const { jobs } = this.state;
+    return (
+      <div>
+        <h1 className="title">Job Board</h1>
+        <JobList jobs={jobs} />
+      </div>
+    );
+  }
+}

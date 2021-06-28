@@ -9,7 +9,7 @@ export const JobBoard = () => {
     loadJobs().then((data) => {
       setJobs(data);
     });
-  });
+  }, []);
 
   return (
     <div>

@@ -48,7 +48,15 @@ const graphqlRequest = async (query, variables = {}) => {
       variables,
     }),
   });
-
   const responseBody = await response.json();
+
+  // Error handling
+  if (responseBody.errors) {
+    const message = responseBody.errors
+      .map((error) => error.message)
+      .join("\n");
+    throw new Error(message);
+  }
+
   return responseBody.data;
 };

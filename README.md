@@ -33,7 +33,7 @@ cd server
 ```
 
 ```
-npm install
+npm start
 ```
 
 2. Run the React client
@@ -43,12 +43,13 @@ cd client
 ```
 
 ```
-npm install
+npm start
 ```
 
 ## Built With
 
 - [React](https://reactjs.org/)
+- [GraphQL](https://graphql.org/)
 
 ## Screenshots
 

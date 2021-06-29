@@ -49,3 +49,23 @@ export const loadJob = async (id) => {
   const responseBody = await response.json();
   return responseBody.data.job;
 };
+
+/**
+ *
+ * @param {*} query GraphQL query
+ * @param {*} variables GraphQL variables
+ * @returns
+ */
+const graphqlRequest = async (query, variables = {}) => {
+  const response = await fetch(endpointURL, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      query,
+      variables,
+    }),
+  });
+
+  const responseBody = await response.json();
+  return responseBody.data;
+};

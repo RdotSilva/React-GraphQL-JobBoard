@@ -1,20 +1,20 @@
 [
-    {
-      "id": "rJKAbDd_b",
-      "companyId": "HJRa-DOuG",
-      "title": "Vice President",
-      "description": "Second highest rank"
-    },
-    {
-      "id": "SJRAZDu_c",
-      "companyId": "HJRa-DOuG",
-      "title": "CEO",
-      "description": "Highest rank"
-    {
-      "id": "rkz1GwOOL",
-      "companyId": "SJV0-wdOM",
-      "title": "Admin",
-      "description": "All access rank"
-    }
-  ]
-  
+  {
+    "id": "rJKAbDd_b",
+    "companyId": "HJRa-DOuG",
+    "title": "Vice President",
+    "description": "Second highest rank"
+  },
+  {
+    "id": "SJRAZDu_c",
+    "companyId": "HJRa-DOuG",
+    "title": "CEO",
+    "description": "Highest rank"
+  },
+  {
+    "id": "rkz1GwOOL",
+    "companyId": "SJV0-wdOM",
+    "title": "Admin",
+    "description": "All access rank"
+  }
+]

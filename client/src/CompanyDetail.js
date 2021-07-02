@@ -4,10 +4,16 @@ import { loadCompany } from "./requests";
 export class CompanyDetail extends Component {
   constructor(props) {
     super(props);
-    const { companyId } = this.props.match.params;
+
     this.state = {
       company: null,
     };
+  }
+
+  async componentDidMount() {
+    const { companyId } = this.props.match.params;
+    const company = await loadCompany(companyId);
+    this.setState({company})
   }
 
   render() {

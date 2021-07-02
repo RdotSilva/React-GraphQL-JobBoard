@@ -7,8 +7,13 @@ const Query = {
   roles: () => db.roles.lis(),
 };
 
+const Company = {
+  jobs: (company) =>
+    db.jobs.list().filter((job) => job.companyId === company.id),
+};
+
 const Job = {
   company: (job) => db.companies.get(job.companyId),
 };
 
-module.exports = { Query, Job };
+module.exports = { Query, Job, Company };

@@ -35,3 +35,10 @@ input CreateJobInput {
   title: String
   description: String
 }
+
+type Benefits {
+  id: ID!
+  title: String
+  job: Job
+  description: String
+}

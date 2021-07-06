@@ -8,7 +8,13 @@ const Query = {
 };
 
 const Mutation = {
-  createJob: (root, { input }) => {
+  // Context is passed into Apollo Server
+  createJob: (root, { input }, context) => {
+    // Check for user auth
+    if (!context.user) {
+      throw new Error("Unauthorized");
+    }
+
     const id = db.jobs.create(input);
     return db.jobs.get(id);
   },

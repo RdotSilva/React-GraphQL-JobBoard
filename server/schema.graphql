@@ -31,7 +31,6 @@ type Role {
 }
 
 input CreateJobInput {
-  companyId: ID
   title: String
   description: String
 }

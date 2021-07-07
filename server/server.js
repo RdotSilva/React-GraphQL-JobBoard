@@ -26,7 +26,7 @@ const resolvers = require("./resolvers");
 
 // Create context to pass user auth into Apollo Server
 const context = ({ req }) => ({
-  user: req.user,
+  user: req.user && db.users.get(req.user.sub),
 });
 
 const apolloServer = new ApolloServer({

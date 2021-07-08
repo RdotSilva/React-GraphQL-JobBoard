@@ -15,9 +15,8 @@ export const JobForm = (props) => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    const companyId = "SJV0-wdOM"; // Temporary hard coded
     const { title, description } = state;
-    createJob({ companyId, title, description }).then((job) => {
+    createJob({ title, description }).then((job) => {
       props.history.push(`/jobs/${job.id}`);
     });
   };

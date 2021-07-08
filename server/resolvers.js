@@ -9,9 +9,9 @@ const Query = {
 
 const Mutation = {
   // Context is passed into Apollo Server
-  createJob: (root, { input }, context) => {
+  createJob: (root, { input }, { user }) => {
     // Check for user auth
-    if (!context.user) {
+    if (!user) {
       throw new Error("Unauthorized");
     }
 

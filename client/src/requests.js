@@ -1,12 +1,29 @@
-import { ApolloClient, HttpLink, InMemoryCache } from "apollo-boost";
+import {
+  ApolloClient,
+  ApolloLink,
+  HttpLink,
+  InMemoryCache,
+} from "apollo-boost";
 import gql from "graphql-tag";
 import { getAccessToken, isLoggedIn } from "./auth";
 
 const endpointURL = "http://localhost:9000/graphql";
 
+const authLink = new ApolloLink((operation, forward) => {
+  // Check if user logged in and set token header
+  if (isLoggedIn()) {
+    operation.setContext({
+      headers: {
+        authorization: "Bearer " + getAccessToken(),
+      },
+    });
+  }
+  return forward(operation);
+});
+
 // Set up the Apollo Client
 const client = new ApolloClient({
-  link: new HttpLink({ uri: endpointURL }),
+  link: ApolloLink.from([authLink, new HttpLink({ uri: endpointURL })]),
   cache: new InMemoryCache(),
 });
 

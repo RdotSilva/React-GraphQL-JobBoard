@@ -4,7 +4,7 @@ const Query = {
   company: (root, { id }) => db.companies.get(id),
   job: (root, { id }) => db.jobs.get(id),
   jobs: () => db.jobs.list(),
-  roles: () => db.roles.lis(),
+  roles: () => db.roles.list(),
 };
 
 const Mutation = {

@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { loadRoles } from "./requests";
 
 export const RoleDetail = () => {
   const [roles, setRoles] = useState([]);
+
+  useEffect(() => {
+    loadRoles().then((data) => {
+      setRoles(data);
+    });
+  }, []);
 
   return (
     <div>

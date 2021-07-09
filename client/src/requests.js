@@ -63,19 +63,24 @@ export const loadCompany = async (id) => {
 };
 
 export const loadJob = async (id) => {
-  const loadJobQuery = `query JobQuery($id: ID!) {
-    job(id: $id) {
+  const query = gql`
+    query JobQuery($id: ID!) {
+      job(id: $id) {
         id
         title
         company {
-            id
-            name
+          id
+          name
         }
-      description
+        description
+      }
     }
-  }`;
+  `;
 
-  const { job } = await graphqlRequest(loadJobQuery, { id });
+  const {
+    data: { job },
+  } = await client.query({ query, variables: { id } });
+  
   return job;
 };
 

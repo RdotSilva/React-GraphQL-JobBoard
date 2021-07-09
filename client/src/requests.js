@@ -147,3 +147,25 @@ const graphqlRequest = async (query, variables = {}) => {
 
   return responseBody.data;
 };
+
+export const loadRoles = async () => {
+  const query = gql`
+    {
+      roles {
+        id
+        title
+        description
+        company {
+          id
+          name
+        }
+      }
+    }
+  `;
+
+  const {
+    data: { roles },
+  } = await client.query({ query });
+
+  return roles;
+};

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { loadRoles } from "./requests";
+import { RoleList } from "./RoleList";
 
 export const RoleDetail = () => {
   const [roles, setRoles] = useState([]);
@@ -10,10 +11,12 @@ export const RoleDetail = () => {
     });
   }, []);
 
-  return (
+  return roles ? (
     <div>
       <h1 className="title">Roles</h1>
-      <p>These are the roles</p>
+      <RoleList roles={roles} />
     </div>
+  ) : (
+    <div>Loading</div>
   );
 };

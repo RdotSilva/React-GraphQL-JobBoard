@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const RoleList = (props) => {
+export const RoleList = ({ roles }) => {
   const renderRole = (role) => {
     const title = role.company
       ? `${role.title} at ${role.company.name}`
@@ -14,5 +15,5 @@ export const RoleList = (props) => {
     );
   };
 
-  return <ul className="box">{props.roles.map(renderRole(role))}</ul>;
+  return <ul className="box">{roles.map((role) => renderRole(role))}</ul>;
 };

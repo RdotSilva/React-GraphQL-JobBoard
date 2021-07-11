@@ -3,6 +3,7 @@ type Query {
   job(id: ID!): Job
   jobs: [Job]
   roles: [Role]
+  role(id: ID!): Role
 }
 
 type Mutation {

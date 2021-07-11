@@ -169,3 +169,25 @@ export const loadRoles = async () => {
 
   return roles;
 };
+
+export const loadRole = async (id) => {
+  const query = gql`
+    query RoleQuery($id: ID!) {
+      role(id: $id) {
+        id
+        title
+        company {
+          id
+          name
+        }
+        description
+      }
+    }
+  `;
+
+  const {
+    data: { role },
+  } = await client.query({ query, variables: { id } });
+
+  return role;
+};

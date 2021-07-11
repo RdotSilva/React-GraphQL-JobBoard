@@ -7,7 +7,7 @@ import { JobBoard } from "./JobBoard";
 import { JobDetail } from "./JobDetail";
 import { JobForm } from "./JobForm";
 import { NavBar } from "./NavBar";
-import { RoleDetail } from "./RoleDetail";
+import { RoleBoard } from "./RoleBoard";
 
 export class App extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ export class App extends Component {
             <div className="container">
               <Switch>
                 <Route exact path="/" component={JobBoard} />
-                <Route exact path="/roles" component={RoleDetail} />
+                <Route exact path="/roles" component={RoleBoard} />
                 <Route path="/companies/:companyId" component={CompanyDetail} />
                 <Route exact path="/jobs/new" component={JobForm} />
                 <Route path="/jobs/:jobId" component={JobDetail} />

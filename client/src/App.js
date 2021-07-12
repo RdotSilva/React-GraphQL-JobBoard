@@ -8,6 +8,7 @@ import { JobDetail } from "./JobDetail";
 import { JobForm } from "./JobForm";
 import { NavBar } from "./NavBar";
 import { RoleBoard } from "./RoleBoard";
+import { RoleDetail } from "./RoleDetail";
 
 export class App extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ export class App extends Component {
               <Switch>
                 <Route exact path="/" component={JobBoard} />
                 <Route exact path="/roles" component={RoleBoard} />
+                <Route path="/roles/:roleId" component={RoleDetail} />
                 <Route path="/companies/:companyId" component={CompanyDetail} />
                 <Route exact path="/jobs/new" component={JobForm} />
                 <Route path="/jobs/:jobId" component={JobDetail} />

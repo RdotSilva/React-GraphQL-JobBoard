@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { loadRole } from "./requests";
-import { RoleList } from "./RoleList";
 
 export const RoleDetail = ({ match }) => {
   const [role, setRole] = useState(null);
@@ -8,14 +8,17 @@ export const RoleDetail = ({ match }) => {
   useEffect(() => {
     const { roleId } = match.params;
     loadRole(roleId).then((data) => {
-      setRoles(data);
+      setRole(data);
     });
   }, []);
 
-  return roles ? (
+  return role ? (
     <div>
-      <h1 className="title">Roles</h1>
-      <RoleList roles={roles} />
+      <h1 className="title">{role.title}</h1>
+      <h2 className="subtitle">
+        <Link to={`/companies/${role.company}`}>{role.company}</Link>
+      </h2>
+      <div className="box">{role.description}</div>
     </div>
   ) : (
     <div>Loading</div>

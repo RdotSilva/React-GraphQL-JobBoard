@@ -30,4 +30,8 @@ const Job = {
   company: (job) => db.companies.get(job.companyId),
 };
 
-module.exports = { Query, Mutation, Job, Company };
+const Role = {
+  company: (role) => db.companies.get(role.companyId),
+};
+
+module.exports = { Query, Mutation, Job, Company, Role };

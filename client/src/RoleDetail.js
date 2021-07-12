@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { loadRoles } from "./requests";
+import { loadRole } from "./requests";
 import { RoleList } from "./RoleList";
 
-export const RoleDetail = () => {
-  const [roles, setRoles] = useState([]);
+export const RoleDetail = ({ match }) => {
+  const [role, setRole] = useState(null);
 
   useEffect(() => {
-    loadRoles().then((data) => {
+    const { roleId } = match.params;
+    loadRole(roleId).then((data) => {
       setRoles(data);
     });
   }, []);

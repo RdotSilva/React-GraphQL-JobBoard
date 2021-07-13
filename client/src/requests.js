@@ -43,7 +43,7 @@ export const loadJobs = async () => {
 
   const {
     data: { jobs },
-  } = await client.query({ query });
+  } = await client.query({ query, fetchPolicy: "no-cache" }); // Set no cache fetch to always get job data on reload
 
   return jobs;
 };

@@ -16,7 +16,7 @@ export const RoleDetail = ({ match }) => {
     <div>
       <h1 className="title">{role.title}</h1>
       <h2 className="subtitle">
-        <Link to={`/companies/${role.company}`}>{role.company}</Link>
+        <Link to={`/companies/${role.company.id}`}>{role.company.name}</Link>
       </h2>
       <div className="box">{role.description}</div>
     </div>

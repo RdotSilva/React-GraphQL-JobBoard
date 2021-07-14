@@ -32,7 +32,6 @@ export const loadJobs = async () => {
     {
       jobs {
         id
-        hiring
         title
         company {
           id
@@ -49,12 +48,39 @@ export const loadJobs = async () => {
   return jobs;
 };
 
+// Load only jobs that are hiring
+export const loadHiringJobs = async () => {
+  const query = gql`
+    query JobsQuery($hiring: String) {
+      jobs(hiring: $hiring) {
+        id
+        hiring
+        title
+        company {
+          id
+          name
+        }
+      }
+    }
+  `;
+
+  const {
+    data: { jobs },
+  } = await client.query({
+    query,
+    variables: {
+      hiring: "true",
+    },
+  });
+
+  return jobs;
+};
+
 // Used to fetch a job
 const jobQuery = gql`
   query JobQuery($id: ID!) {
     job(id: $id) {
       id
-      hiring
       title
       company {
         id

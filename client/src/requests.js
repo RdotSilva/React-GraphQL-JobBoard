@@ -32,6 +32,7 @@ export const loadJobs = async () => {
     {
       jobs {
         id
+        hiring
         title
         company {
           id
@@ -53,6 +54,7 @@ const jobQuery = gql`
   query JobQuery($id: ID!) {
     job(id: $id) {
       id
+      hiring
       title
       company {
         id

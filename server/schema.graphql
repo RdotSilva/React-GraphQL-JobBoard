@@ -19,7 +19,7 @@ type Company {
 
 type Job {
   id: ID!
-  hiring: Boolean
+  hiring: String
   title: String
   company: Company
   description: String

@@ -2,39 +2,29 @@
   {
     "id": "rJKAbDd_z",
     "companyId": "HJRa-DOuG",
+    "hiring": "true",
     "title": "Frontend Developer",
     "description": "We are looking for a Frontend Developer familiar with React."
   },
   {
     "id": "SJRAZDu_z",
     "companyId": "HJRa-DOuG",
+    "hiring": "true",
     "title": "Backend Developer",
     "description": "We are looking for a Backend Developer familiar with Node.js and Express."
   },
   {
     "id": "rkz1GwOOM",
     "companyId": "SJV0-wdOM",
+    "hiring": "true",
     "title": "Full-Stack Developer",
     "description": "We are looking for a Full-Stack Developer familiar with Node.js, Express, and React."
   },
   {
-    "id": "B1HGPlbTu",
-    "input": {
-      "companyId": "SJV0-wdOM",
-      "title": "Dev Ops",
-      "description": "Infra and ops"
-    }
-  },
-  {
     "id": "ryk6ouXpu",
     "companyId": "SJV0-wdOM",
+    "hiring": "false",
     "title": "QA Tester",
     "description": "QA testing"
-  },
-  {
-    "id": "ryP16fUp_",
-    "title": "Company Owner",
-    "description": "Owner",
-    "companyId": "SJV0-wdOM"
   }
 ]

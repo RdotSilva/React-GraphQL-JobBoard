@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { JobList } from "./JobList";
-import { loadJobs } from "./requests";
+import { loadHiringJobs } from "./requests";
 
 export const JobBoard = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    loadJobs().then((data) => {
+    loadHiringJobs().then((data) => {
       setJobs(data);
     });
   }, []);

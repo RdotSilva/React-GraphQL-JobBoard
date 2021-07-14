@@ -120,7 +120,7 @@ export const loadCompany = async (id) => {
 export const loadJob = async (id) => {
   const {
     data: { job },
-  } = await client.query({ jobQuery, variables: { id } });
+  } = await client.query({ query: jobQuery, variables: { id } });
 
   return job;
 };

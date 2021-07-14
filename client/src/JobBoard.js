@@ -15,6 +15,7 @@ export const JobBoard = () => {
     <div>
       <h1 className="title">Job Board</h1>
       <JobList jobs={jobs} />
+      // TODO: Filter out jobs that are not hiring
     </div>
   );
 };

@@ -65,15 +65,15 @@ export const loadHiringJobs = async () => {
   `;
 
   const {
-    data: { jobs },
+    data: { jobsHiring },
   } = await client.query({
     query,
     variables: {
-      hiring: "true",
+      hiring: "true", // Hard coded for now, update this to be dynamic
     },
   });
 
-  return jobs;
+  return jobsHiring;
 };
 
 // Used to fetch a job

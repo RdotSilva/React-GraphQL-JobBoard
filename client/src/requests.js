@@ -52,7 +52,7 @@ export const loadJobs = async () => {
 export const loadHiringJobs = async () => {
   const query = gql`
     query JobsQuery($hiring: String) {
-      jobs(hiring: $hiring) {
+      jobsHiring(hiring: $hiring) {
         id
         hiring
         title

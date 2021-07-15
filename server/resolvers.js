@@ -4,6 +4,10 @@ const Query = {
   company: (root, { id }) => db.companies.get(id),
   job: (root, { id }) => db.jobs.get(id),
   jobs: () => db.jobs.list(),
+  jobsHiring:
+    () =>
+    (root, { hiring }) =>
+      db.jobs.find((a) => a.hiring == hiring),
   roles: () => db.roles.list(),
   role: (root, { id }) => db.roles.get(id),
 };

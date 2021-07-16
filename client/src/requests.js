@@ -41,7 +41,7 @@ export const loadHiringJobs = async () => {
   } = await client.query({
     query: jobsHiringQuery,
     variables: {
-      hiringToggle,
+      hiringToggle: "true", // Hard coded for now
     },
   });
 
@@ -91,8 +91,8 @@ const jobQuery = gql`
 `;
 
 const jobsHiringQuery = gql`
-  query JobsQuery($hiring: String) {
-    jobsHiring(hiring: $hiring) {
+  query JobsQuery($hiringToggle: Boolean) {
+    jobsHiring(hiringToggle: $hiringToggle) {
       id
       hiring
       title

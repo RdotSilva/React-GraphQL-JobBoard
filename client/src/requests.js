@@ -41,7 +41,7 @@ export const loadHiringJobs = async () => {
   } = await client.query({
     query: jobsHiringQuery,
     variables: {
-      hiring: "true", // Hard coded for now, update this to be dynamic
+      hiringToggle,
     },
   });
 

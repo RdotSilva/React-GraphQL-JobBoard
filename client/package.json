@@ -12,7 +12,8 @@
     "graphql": "^15.5.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "react-toggle": "^4.1.2"
   },
   "devDependencies": {
     "react-scripts": "4.0.3"

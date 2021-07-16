@@ -2,7 +2,7 @@ type Query {
   company(id: ID!): Company
   job(id: ID!): Job
   jobs(hiring: String): [Job]
-  jobsHiring(hiring: String): [Job]
+  jobsHiring(hiringToggle: Boolean): [Job]
   roles: [Role]
   role(id: ID!): Role
 }

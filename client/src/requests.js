@@ -35,13 +35,13 @@ export const loadJobs = async () => {
   return jobs;
 };
 
-export const loadHiringJobs = async () => {
+export const loadHiringJobs = async (hiringToggle) => {
   const {
     data: { jobsHiring },
   } = await client.query({
     query: jobsHiringQuery,
     variables: {
-      hiringToggle: "true", // Hard coded for now
+      hiringToggle,
     },
   });
 

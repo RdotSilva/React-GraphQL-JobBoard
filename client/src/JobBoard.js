@@ -8,10 +8,10 @@ export const JobBoard = () => {
   const [showAllJobs, setShowAllJobs] = useState(false);
 
   useEffect(() => {
-    loadHiringJobs().then((data) => {
+    loadHiringJobs(showAllJobs).then((data) => {
       setJobs(data);
     });
-  }, []);
+  }, [showAllJobs]);
 
   return (
     <div>
@@ -23,7 +23,6 @@ export const JobBoard = () => {
         onChange={() => setShowAllJobs(!showAllJobs)}
       />
       <JobList jobs={jobs} />
-      // TODO: Filter out jobs that are not hiring
     </div>
   );
 };
